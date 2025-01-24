@@ -1,0 +1,47 @@
+---
+---
+<article class="food-photography">
+    <img src="/placeholder-food.jpg" alt="Food Photography" />
+    <div class="overlay">
+        <h3>Food Photography</h3>
+        <a href="https://instagram.com/elyeriff" class="credit">@elyeriff</a>
+    </div>
+</article>
+
+<style>
+    .food-photography {
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .credit {
+        color: var(--accent-yellow);
+        text-decoration: none;
+        font-size: 0.875rem;
+    }
+
+    .credit:hover {
+        text-decoration: underline;
+    }
+</style>

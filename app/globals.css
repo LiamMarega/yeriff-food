@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1A1A1A;
+  --secondary: #252525;
+  --accent: #FF4B3E;
+  --accent-light: #FF6B5E;
+  --text-primary: #FFFFFF;
+  --text-secondary: #B3B3B3;
+  --food-yellow: #FFB800;
+}
+
+body {
+  background-color: var(--primary);
+  color: var(--text-primary);
+}
+
+@layer components {
+  .nav-link {
+    @apply text-sm font-medium text-white hover:text-food-yellow transition-colors relative
+           touch-manipulation;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-food-yellow transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-white px-3 sm:px-4 py-2 rounded-lg font-medium 
+           hover:bg-accent-light transition-colors duration-300
+           shadow-lg shadow-accent/20 text-sm sm:text-base
+           active:transform active:scale-95 touch-manipulation;
+  }
+
+  .bento-card {
+    @apply bg-secondary rounded-xl sm:rounded-2xl p-4 sm:p-6 overflow-hidden
+           border border-white/5 backdrop-blur-sm
+           hover:border-food-yellow/20 transition-all duration-300
+           shadow-lg shadow-black/20;
+  }
+
+  .rating-badge {
+    @apply bg-food-yellow text-primary px-2 py-1 rounded-md
+           font-bold text-xs sm:text-sm inline-flex items-center gap-1;
+  }
+
+  .category-tag {
+    @apply bg-white/10 text-xs px-2 sm:px-3 py-1 rounded-full
+           hover:bg-food-yellow hover:text-primary transition-colors
+           whitespace-nowrap;
+  }
+}
+
+/* Mejoras para dispositivos táctiles */
+@media (hover: none) {
+  .nav-link:active::after {
+    @apply w-full;
+  }
+  
+  .group:active .group-hover\:opacity-100 {
+    @apply opacity-100;
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 360px) {
+  .text-3xl {
+    font-size: 1.5rem;
+  }
+  
+  .p-4 {
+    padding: 0.75rem;
+  }
+}

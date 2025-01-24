@@ -1,0 +1,95 @@
+---
+---
+<article class="featured-review">
+    <span class="badge">Featured Review</span>
+    <div class="content">
+        <img src="/placeholder-restaurant.jpg" alt="Featured Restaurant" class="main-image" />
+        <div class="review-details">
+            <h2>Le Petit Bistro</h2>
+            <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="score">4.8/5</span>
+            </div>
+            <p class="description">
+                An extraordinary culinary journey through French cuisine, 
+                where traditional meets modern in perfect harmony.
+            </p>
+            <a href="https://instagram.com/elyeriff" class="credit">@elyeriff</a>
+        </div>
+    </div>
+</article>
+
+<style>
+    .featured-review {
+        grid-column: span 2;
+        grid-row: span 2;
+        background: var(--secondary-dark);
+        border-radius: 24px;
+        padding: 1.5rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .badge {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: var(--accent-yellow);
+        color: var(--primary-dark);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.875rem;
+        z-index: 1;
+    }
+
+    .content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-image {
+        width: 100%;
+        height: 60%;
+        object-fit: cover;
+        border-radius: 16px;
+        margin-bottom: 1rem;
+    }
+
+    .review-details {
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .rating {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .stars {
+        color: var(--accent-yellow);
+    }
+
+    .description {
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+
+    .credit {
+        color: var(--accent-yellow);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .credit:hover {
+        text-decoration: underline;
+    }
+</style>
