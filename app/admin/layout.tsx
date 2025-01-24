@@ -1,7 +1,5 @@
-'use client'
-
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { redirect, useRouter } from 'next/navigation'
 import { 
   HomeIcon, 
   BuildingStorefrontIcon,
@@ -11,44 +9,19 @@ import {
   ArrowLeftOnRectangleIcon 
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import { createClient } from '@/utils/supabase/server'
 
-export default function AdminLayout({
+export default  async function AdminLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const [isLoading, setIsLoading] = useState(true)
-  const router = useRouter()
 
-  // useEffect(() => {
-  //   const checkAuth = async () => {
-      
-  //     if (!session) {
-  //       router.push('/admin/login')
-  //     } else {
-  //       setIsLoading(false)
-  //     }
-  //   }
-
-  //   checkAuth()
-  // }, [router, supabase])
-
-  // const handleSignOut = async () => {
-  //   await supabase.auth.signOut()
-  //   router.push('/admin/login')
-  // }
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-primary flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-food-yellow"></div>
-      </div>
-    )
-  }
 
   return (
     <div className="min-h-screen bg-primary flex">
       {/* Sidebar */}
+  
       <aside className="w-64 bg-secondary border-r border-white/5">
         <div className="h-16 flex items-center px-6 border-b border-white/5">
           <Link href="/admin" className="text-xl font-bold text-food-yellow">
